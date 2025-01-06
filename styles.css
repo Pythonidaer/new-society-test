@@ -131,60 +131,18 @@ section {
     margin-top: 20px;
 }
 
-/* Contact Form Styles */
-.contact-form {
-    display: grid;
-    gap: 20px;
-}
-
-.form-group {
-    display: grid;
-    gap: 8px;
-}
-
-label {
-    font-weight: bold;
-    color: #555;
-}
-
-input, textarea {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    width: 100%;
-}
-
-textarea {
-    min-height: 100px;
-    resize: vertical;
-}
-
-button {
+.job-card .job-link {
+    display: inline-block;
     background-color: #3498db;
     color: white;
-    padding: 12px 24px;
-    border: none;
+    text-decoration: none;
+    padding: 8px 16px;
     border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
+    margin-top: 15px;
     transition: background-color 0.3s;
 }
 
-button:hover {
+.job-card .job-link:hover {
     background-color: #2980b9;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        padding: 10px;
-    }
-
-    .job-cards {
-        grid-template-columns: 1fr;
-    }
-
-    .job-card {
-        margin-bottom: 20px;
-    }
+    text-decoration: none;
 }
