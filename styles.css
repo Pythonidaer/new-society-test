@@ -1,5 +1,207 @@
-/* Add to your existing CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+/* Dark mode colors with appropriate contrast ratios and neumorphic effects */
+:root {
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
+    --bg-card: #2d2d2d;
+    --text-primary: #ffffff;
+    --text-secondary: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --accent-primary: #60a5fa;
+    --accent-secondary: #3b82f6;
+    --success: #34d399;
+    --error: #ef4444;
+    --card-border: #404040;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --neumo-light: rgba(255, 255, 255, 0.05);
+    --neumo-dark: rgba(0, 0, 0, 0.5);
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Neumorphic Header */
+header {
+    text-align: center;
+    padding: 40px 0;
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 8px 8px 16px var(--neumo-dark),
+                -8px -8px 16px var(--neumo-light);
+}
+
+h1 {
+    color: var(--text-primary);
+    font-size: 2.5em;
+}
+
+h2 {
+    color: var(--text-primary);
+    margin-bottom: 20px;
+}
+
+/* Neumorphic Sections */
+section {
+    background-color: var(--bg-secondary);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 8px 8px 16px var(--neumo-dark),
+                -8px -8px 16px var(--neumo-light);
+}
+
+.features ul {
+    list-style-position: inside;
+    margin-left: 20px;
+}
+
+.features li {
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+}
+
+/* Jobs Section Styles */
+.jobs-intro {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+}
+
+.job-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 30px;
+}
+
+/* Neumorphic Job Cards */
+.job-card {
+    position: relative;
+    background: var(--bg-card);
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid var(--card-border);
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: inset 2px 2px 5px var(--neumo-dark),
+                inset -2px -2px 5px var(--neumo-light);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    align-items: start;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-content {
+    flex: 1;
+}
+
+.card-header {
+    margin-bottom: 15px;
+}
+
+.job-card h3 {
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    font-size: 1.2em;
+}
+
+.job-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.job-meta .separator {
+    color: var(--text-muted);
+}
+
+.job-card .company {
+    color: var(--accent-primary);
+    font-weight: bold;
+}
+
+.job-card .salary-range {
+    color: var(--success);
+    font-weight: bold;
+}
+
+.job-card .job-type {
+    color: var(--text-muted);
+    font-size: 0.9em;
+}
+
+.job-card .requirements {
+    list-style: none;
+    margin: 12px 0;
+}
+
+.job-card .requirements li {
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.job-card .requirements li:before {
+    content: "•";
+    color: var(--accent-primary);
+    position: absolute;
+    left: 0;
+}
+
+.card-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 40px;
+}
+
+.job-card .job-link {
+    height: 40px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    white-space: nowrap;
+    box-shadow: 3px 3px 6px var(--neumo-dark),
+                -3px -3px 6px var(--neumo-light);
+    transition: all 0.3s ease;
+}
+
+.job-card .job-link:hover {
+    background-color: var(--accent-primary);
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 8px var(--neumo-dark),
+                -4px -4px 8px var(--neumo-light);
+}
+
+/* Mark Button Styles - Updated */
 .mark-button {
     width: 40px;
     height: 40px;
@@ -62,4 +264,16 @@
     margin: 20px 0;
     border-top: 1px solid var(--card-border);
     border-bottom: 1px solid var(--card-border);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .job-card {
+        grid-template-columns: 1fr;
+    }
+    
+    .card-actions {
+        justify-content: flex-start;
+        margin-top: 15px;
+    }
 }
