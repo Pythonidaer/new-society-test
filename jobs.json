@@ -1,0 +1,134 @@
+{
+  "jobs": [
+    {
+      "title": "Tech Lead Frontend Visualization",
+      "company": "Foxglove",
+      "requirements": [
+        "TypeScript expertise",
+        "Visualization experience",
+        "Technical leadership"
+      ],
+      "salaryRange": "$140,000 - $180,000/year",
+      "jobType": "Remote (U.S. or Australia/NZ)",
+      "applyUrl": "https://foxglove.dev/careers",
+      "marked": false
+    },
+    {
+      "title": "Senior Web3 Frontend Engineer",
+      "company": "Magic",
+      "requirements": [
+        "React & TypeScript",
+        "Web3 experience",
+        "Frontend architecture"
+      ],
+      "salaryRange": "$120,000 - $170,000/year",
+      "jobType": "Remote Global",
+      "applyUrl": "https://web3.career/front-end+remote-jobs",
+      "marked": false
+    },
+    {
+      "title": "Senior Frontend Engineer",
+      "company": "HackerRank",
+      "requirements": [
+        "TypeScript",
+        "Frontend Engineer II level",
+        "Modern JavaScript"
+      ],
+      "salaryRange": "$50,000 - $75,000/year",
+      "jobType": "Remote",
+      "applyUrl": "https://remoteok.com/remote-frontend+typescript-jobs",
+      "marked": false
+    },
+    {
+      "title": "Frontend Architect",
+      "company": "Working Nomads",
+      "requirements": [
+        "React expertise",
+        "Architecture design",
+        "Team leadership"
+      ],
+      "salaryRange": "$130,000 - $180,000/year",
+      "jobType": "Remote Worldwide",
+      "applyUrl": "https://www.workingnomads.com/remote-react-jobs",
+      "marked": false
+    },
+    {
+      "title": "Senior React Developer",
+      "company": "Turing",
+      "requirements": [
+        "React/Node.js",
+        "Full-stack capabilities",
+        "5+ years experience"
+      ],
+      "salaryRange": "$60,000 - $140,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://www.turing.com/jobs/remote-react-js-developer",
+      "marked": false
+    },
+    {
+      "title": "Frontend Engineer II",
+      "company": "Li.fi",
+      "requirements": [
+        "TypeScript",
+        "Modern frameworks",
+        "Performance optimization"
+      ],
+      "salaryRange": "$50,000 - $75,000/year",
+      "jobType": "Remote",
+      "applyUrl": "https://remoteok.com/remote-frontend+typescript-jobs",
+      "marked": false
+    },
+    {
+      "title": "Senior Frontend Engineer",
+      "company": "Arc",
+      "requirements": [
+        "TypeScript expertise",
+        "Frontend architecture",
+        "Team collaboration"
+      ],
+      "salaryRange": "$100,000 - $160,000/year",
+      "jobType": "Remote Global",
+      "applyUrl": "https://arc.dev/remote-jobs/front-end",
+      "marked": false
+    },
+    {
+      "title": "React Developer",
+      "company": "We Work Remotely",
+      "requirements": [
+        "React.js",
+        "Frontend development",
+        "Modern JavaScript"
+      ],
+      "salaryRange": "$80,000 - $140,000/year",
+      "jobType": "Remote",
+      "applyUrl": "https://weworkremotely.com/categories/remote-front-end-programming-jobs",
+      "marked": false
+    },
+    {
+      "title": "Senior Web3 Software Engineer",
+      "company": "Gemini",
+      "requirements": [
+        "React & TypeScript",
+        "Web3 development",
+        "DeFi knowledge"
+      ],
+      "salaryRange": "$130,000 - $190,000/year",
+      "jobType": "Remote",
+      "applyUrl": "https://web3.career/front-end+remote-jobs",
+      "marked": false
+    },
+    {
+      "title": "Frontend Engineer",
+      "company": "SimplyHired",
+      "requirements": [
+        "React",
+        "TypeScript",
+        "Modern web development"
+      ],
+      "salaryRange": "$90,000 - $140,000/year",
+      "jobType": "Remote",
+      "applyUrl": "https://www.simplyhired.com/search?q=react+typescript&l=remote",
+      "marked": false
+    }
+  ]
+}
