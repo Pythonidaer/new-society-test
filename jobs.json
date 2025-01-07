@@ -2,45 +2,68 @@
   "jobs": [
     {
       "title": "Senior Frontend SDK Engineer",
-      "company": "Wormholelabs",
+      "company": "Wormhole Labs",
       "requirements": [
         "TypeScript SDK Development",
-        "React Components",
-        "Open Source Experience"
+        "Open Source Development",
+        "Cross-chain Development"
+      ],
+      "salaryRange": "$140,000 - $200,000/year",
+      "jobType": "Remote Global",
+      "applyUrl": "https://web3.career/typescript-jobs",
+      "marked": false
+    },
+    {
+      "title": "Senior Frontend Engineer",
+      "company": "Magic",
+      "requirements": [
+        "Web3 Development",
+        "React & TypeScript",
+        "Blockchain Integration"
       ],
       "salaryRange": "$130,000 - $180,000/year",
-      "jobType": "Remote Global",
-      "applyUrl": "https://web3.career/front-end+remote-jobs"
+      "jobType": "Remote US",
+      "applyUrl": "https://web3.career/front-end+remote-jobs",
+      "marked": false
     },
     {
-      "title": "Senior Frontend Engineer",
-      "company": "Zap",
+      "title": "Senior Frontend React Engineer",
+      "company": "Kraken",
       "requirements": [
-        "React/TypeScript",
-        "Performance Optimization",
-        "DApp Development"
+        "Crypto Exchange Experience",
+        "Advanced React Patterns",
+        "High-Performance UIs"
       ],
       "salaryRange": "$120,000 - $170,000/year",
-      "jobType": "Remote US",
-      "applyUrl": "https://web3.career/react+remote-jobs"
+      "jobType": "Remote Global",
+      "applyUrl": "https://web3.career/senior-frontend-engineer-react-kraken/7632",
+      "marked": false
     },
     {
-      "title": "Senior Frontend Engineer",
-      "company": "Socket",
+      "title": "Web3 Frontend Developer",
+      "company": "Zora",
       "requirements": [
+        "NFT Platform Development",
         "React & TypeScript",
-        "Web3 Integration",
-        "Security Best Practices"
+        "Smart Contract Integration"
       ],
-      "salaryRange": "$140,000 - $190,000/year",
+      "salaryRange": "$115,000 - $170,000/year",
       "jobType": "Remote",
-      "applyUrl": "https://web3.career/react+remote-jobs"
+      "applyUrl": "https://web3.career/web3-companies/zora",
+      "marked": false
+    },
+    {
+      "title": "Senior DApp Frontend Engineer",
+      "company": "Balancer Labs",
+      "requirements": [
+        "DeFi Experience",
+        "Web3.js/Ethers.js",
+        "React & TypeScript"
+      ],
+      "salaryRange": "$130,000 - $180,000/year",
+      "jobType": "Remote",
+      "applyUrl": "https://web3.career/senior-frontend-engineer-web3-defi-balancer-labs-1/35436",
+      "marked": false
     }
-    // Adding ~47 more jobs with similar structure
-    // Each following the pattern above with:
-    // - Salary ranges $85k+
-    // - Remote positions
-    // - React/TypeScript focus
-    // - Web3/Fintech companies
   ]
 }
