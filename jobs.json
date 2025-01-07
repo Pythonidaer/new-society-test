@@ -1,68 +1,133 @@
 {
   "jobs": [
     {
-      "title": "Senior Frontend SDK Engineer",
-      "company": "Wormhole Labs",
+      "title": "Senior Frontend Engineer",
+      "company": "Privy",
       "requirements": [
-        "TypeScript SDK Development",
-        "Open Source Development",
-        "Cross-chain Development"
+        "React & TypeScript",
+        "Identity/Auth Systems",
+        "Modern Frontend Architecture"
       ],
-      "salaryRange": "$140,000 - $200,000/year",
-      "jobType": "Remote Global",
-      "applyUrl": "https://web3.career/typescript-jobs",
+      "salaryRange": "$140,000 - $180,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://privy.io/careers",
+      "marked": false
+    },
+    {
+      "title": "Staff Frontend Engineer",
+      "company": "Dell Technologies",
+      "requirements": [
+        "React & TypeScript",
+        "Enterprise Applications",
+        "Design Systems"
+      ],
+      "salaryRange": "$150,000 - $200,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://www.turing.com/jobs/remote-front-end-developer-jobs",
+      "marked": false
+    },
+    {
+      "title": "Senior React Developer",
+      "company": "Neat Capital",
+      "requirements": [
+        "React/TypeScript",
+        "Banking/Finance UIs",
+        "Performance Optimization"
+      ],
+      "salaryRange": "$130,000 - $170,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://angel.co/company/neatcapital/jobs",
       "marked": false
     },
     {
       "title": "Senior Frontend Engineer",
-      "company": "Magic",
+      "company": "GlossGenius",
       "requirements": [
-        "Web3 Development",
         "React & TypeScript",
-        "Blockchain Integration"
+        "SaaS Experience",
+        "Modern JS Ecosystem"
       ],
-      "salaryRange": "$130,000 - $180,000/year",
+      "salaryRange": "$120,000 - $160,000/year",
+      "jobType": "Remote",
+      "applyUrl": "https://remoteok.com/remote-react+typescript-jobs",
+      "marked": false
+    },
+    {
+      "title": "Senior Frontend Developer",
+      "company": "Finom",
+      "requirements": [
+        "React/TypeScript",
+        "Fintech Experience",
+        "Component Libraries"
+      ],
+      "salaryRange": "$110,000 - $150,000/year",
+      "jobType": "Remote Europe",
+      "applyUrl": "https://cy.linkedin.com/jobs/view/senior-frontend-developer-react-typescript-at-finom-3836472735",
+      "marked": false
+    },
+    {
+      "title": "Lead Frontend Engineer",
+      "company": "StackAdapt",
+      "requirements": [
+        "React & TypeScript",
+        "Team Leadership",
+        "AdTech Experience"
+      ],
+      "salaryRange": "$140,000 - $190,000/year",
+      "jobType": "Remote US/Canada",
+      "applyUrl": "https://remoteok.com/remote-react+typescript-jobs",
+      "marked": false
+    },
+    {
+      "title": "Senior Frontend Developer",
+      "company": "Disney Streaming",
+      "requirements": [
+        "React/TypeScript",
+        "Video Streaming",
+        "High Scale Systems"
+      ],
+      "salaryRange": "$145,000 - $185,000/year",
       "jobType": "Remote US",
-      "applyUrl": "https://web3.career/front-end+remote-jobs",
+      "applyUrl": "https://www.turing.com/jobs/remote-front-end-developer-jobs",
       "marked": false
     },
     {
-      "title": "Senior Frontend React Engineer",
-      "company": "Kraken",
+      "title": "Senior React Engineer",
+      "company": "Cordial Systems",
       "requirements": [
-        "Crypto Exchange Experience",
-        "Advanced React Patterns",
-        "High-Performance UIs"
-      ],
-      "salaryRange": "$120,000 - $170,000/year",
-      "jobType": "Remote Global",
-      "applyUrl": "https://web3.career/senior-frontend-engineer-react-kraken/7632",
-      "marked": false
-    },
-    {
-      "title": "Web3 Frontend Developer",
-      "company": "Zora",
-      "requirements": [
-        "NFT Platform Development",
         "React & TypeScript",
-        "Smart Contract Integration"
+        "Email Systems",
+        "API Integration"
       ],
-      "salaryRange": "$115,000 - $170,000/year",
+      "salaryRange": "$120,000 - $160,000/year",
       "jobType": "Remote",
-      "applyUrl": "https://web3.career/web3-companies/zora",
+      "applyUrl": "https://remoteok.com/remote-front-end+senior-jobs",
       "marked": false
     },
     {
-      "title": "Senior DApp Frontend Engineer",
-      "company": "Balancer Labs",
+      "title": "Frontend Tech Lead",
+      "company": "3motionAI",
       "requirements": [
-        "DeFi Experience",
-        "Web3.js/Ethers.js",
-        "React & TypeScript"
+        "React/TypeScript",
+        "AI/ML Integration",
+        "Team Management"
       ],
-      "salaryRange": "$130,000 - $180,000/year",
+      "salaryRange": "$130,000 - $170,000/year",
+      "jobType": "Remote Global",
+      "applyUrl": "https://remoteok.com/remote-dev+react-jobs",
+      "marked": false
+    },
+    {
+      "title": "Senior Frontend Developer",
+      "company": "Sticker Mule",
+      "requirements": [
+        "React & TypeScript",
+        "E-commerce",
+        "UX Design"
+      ],
+      "salaryRange": "$100,000 - $130,000/year",
       "jobType": "Remote",
-      "applyUrl": "https://web3.career/senior-frontend-engineer-web3-defi-balancer-labs-1/35436",
+      "applyUrl": "https://remoteok.com/remote-dev+react-jobs",
       "marked": false
     }
   ]
