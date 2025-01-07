@@ -7,8 +7,8 @@ class JobTracker {
     async initialize() {
         let storedJobs = localStorage.getItem('jobPostings');
         
-        // If no stored jobs, fetch from JSON
         if (!storedJobs) {
+            // First-time load from JSON
             try {
                 const response = await fetch('jobs.json');
                 const data = await response.json();
@@ -25,36 +25,46 @@ class JobTracker {
         } else {
             let jobs = JSON.parse(storedJobs);
 
-            // Remove marked jobs and update localStorage
-            jobs = jobs.filter(job => !job.marked);
-            localStorage.setItem('jobPostings', JSON.stringify(jobs));
+            // Remove jobs that were marked in the previous session
+            const unmarkedJobs = jobs.filter(job => !job.marked);
 
             try {
-                // Load new jobs from JSON if needed
+                // Load new jobs from JSON
                 const response = await fetch('jobs.json');
                 const data = await response.json();
                 
-                // Generate unique IDs, using existing ID if present
-                const existingIds = jobs.map(job => job.id);
-                const newJobs = data.jobs.map(job => ({
-                    ...job, 
-                    marked: false,
-                    id: job.id || this.generateUniqueId(existingIds)
-                }));
+                // Merge existing jobs while avoiding duplicates
+                const mergedJobs = data.jobs.map(newJob => {
+                    // Find an existing job with the same apply URL
+                    const existingJob = unmarkedJobs.find(job => job.applyUrl === newJob.applyUrl);
+                    
+                    // If an existing job is found, use its details
+                    if (existingJob) {
+                        return {
+                            ...newJob,
+                            marked: false,
+                            id: existingJob.id
+                        };
+                    }
+                    
+                    // If no existing job, create a new one
+                    return {
+                        ...newJob,
+                        marked: false,
+                        id: this.generateUniqueId()
+                    };
+                });
 
-                // Merge new jobs, avoiding duplicates
-                const mergedJobs = [
-                    ...jobs,
-                    ...newJobs.filter(newJob => 
-                        !jobs.some(existingJob => existingJob.applyUrl === newJob.applyUrl)
-                    )
-                ];
-
+                // Update localStorage with merged jobs (excluding previously marked jobs)
                 localStorage.setItem('jobPostings', JSON.stringify(mergedJobs));
+                
+                // Render jobs, excluding marked jobs
                 this.renderJobs(mergedJobs);
             } catch (error) {
                 console.error('Error fetching new jobs:', error);
-                this.renderJobs(jobs);
+                // If there's an error, render unmarked jobs
+                this.renderJobs(unmarkedJobs);
+                localStorage.setItem('jobPostings', JSON.stringify(unmarkedJobs));
             }
         }
     }
