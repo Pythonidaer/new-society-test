@@ -8,7 +8,6 @@ class JobTracker {
         let storedJobs = localStorage.getItem('jobPostings');
         
         if (!storedJobs) {
-            // Initial load when no jobs exist in storage
             try {
                 const response = await fetch('jobs.json');
                 const data = await response.json();
@@ -19,38 +18,31 @@ class JobTracker {
                 console.error('Error loading initial jobs:', error);
             }
         } else {
-            // Remove marked jobs before loading new ones
+            // On refresh, only get unmarked jobs from storage
             const jobs = JSON.parse(storedJobs);
-            const activeJobs = jobs.filter(job => !job.marked);
+            const unmarkedJobs = jobs.filter(job => !job.marked);
             
             try {
-                // Fetch new jobs and merge with existing unmarked jobs
+                // Load new jobs and merge them
                 const response = await fetch('jobs.json');
                 const data = await response.json();
-                await this.mergeNewJobs(data.jobs, activeJobs);
+                const newJobs = data.jobs.map(job => ({...job, marked: false}));
+                await this.mergeNewJobs(newJobs, unmarkedJobs);
             } catch (error) {
                 console.error('Error fetching new jobs:', error);
-                this.renderJobs(activeJobs);
+                this.renderJobs(unmarkedJobs);
             }
         }
     }
 
     async mergeNewJobs(newJobs, existingJobs = []) {
-        // Filter out any jobs that already exist in storage (checking by URL)
         const uniqueNewJobs = newJobs.filter(newJob => 
             !existingJobs.some(existingJob => existingJob.applyUrl === newJob.applyUrl)
-        ).map(job => ({...job, marked: false}));
+        );
 
-        if (uniqueNewJobs.length > 0) {
-            const updatedJobs = [...existingJobs, ...uniqueNewJobs];
-            localStorage.setItem('jobPostings', JSON.stringify(updatedJobs));
-            this.renderJobs(updatedJobs);
-            console.log(`Added ${uniqueNewJobs.length} new jobs to storage`);
-        } else {
-            localStorage.setItem('jobPostings', JSON.stringify(existingJobs));
-            this.renderJobs(existingJobs);
-            console.log('No new unique jobs to add');
-        }
+        const allJobs = [...existingJobs, ...uniqueNewJobs];
+        localStorage.setItem('jobPostings', JSON.stringify(allJobs));
+        this.renderJobs(allJobs);
     }
 
     renderJobs(jobs) {
@@ -58,19 +50,33 @@ class JobTracker {
         const jobsSection = document.createElement('div');
         jobsSection.className = 'job-cards';
 
-        // Only render unmarked jobs
-        const unmarkedJobs = jobs.filter(job => !job.marked);
-        unmarkedJobs.forEach(job => {
-            const card = this.createJobCard(job);
-            jobsSection.appendChild(card);
+        // Current session marked vs unmarked jobs
+        const activeJobs = jobs.filter(job => !job.marked);
+        const markedJobs = jobs.filter(job => job.marked);
+
+        // Render active jobs first
+        activeJobs.forEach(job => {
+            jobsSection.appendChild(this.createJobCard(job));
         });
+
+        // Show marked jobs section if there are any in this session
+        if (markedJobs.length > 0) {
+            const separator = document.createElement('div');
+            separator.className = 'jobs-separator';
+            separator.textContent = 'Recently Marked Jobs - Will be removed on refresh';
+            jobsSection.appendChild(separator);
+
+            markedJobs.forEach(job => {
+                jobsSection.appendChild(this.createJobCard(job));
+            });
+        }
 
         this.jobsContainer.appendChild(jobsSection);
     }
 
     createJobCard(job) {
         const card = document.createElement('div');
-        card.className = 'job-card';
+        card.className = `job-card ${job.marked ? 'marked' : ''}`;
         
         card.innerHTML = `
             <div class="card-content">
@@ -90,26 +96,40 @@ class JobTracker {
             </div>
             <div class="card-actions">
                 <a href="${job.applyUrl}" class="job-link" target="_blank" rel="noopener noreferrer">Apply Now</a>
-                <button class="mark-button" data-url="${job.applyUrl}" title="Mark job as reviewed">
-                    <span class="button-light"></span>
+                <button class="mark-button ${job.marked ? 'marked' : ''}" 
+                        data-url="${job.applyUrl}" 
+                        title="${job.marked ? 'Unmark Job' : 'Mark as Reviewed'}"
+                        aria-label="${job.marked ? 'Unmark Job' : 'Mark as Reviewed'}">
+                    <span class="button-light" aria-hidden="true"></span>
                 </button>
             </div>
         `;
 
         const markButton = card.querySelector('.mark-button');
-        markButton.addEventListener('click', () => this.toggleJobMark(job.applyUrl));
+        markButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            this.toggleJobMark(job.applyUrl);
+        });
 
         return card;
     }
 
     toggleJobMark(jobUrl) {
         const jobs = JSON.parse(localStorage.getItem('jobPostings'));
-        const updatedJobs = jobs.filter(job => job.applyUrl !== jobUrl);
+        const updatedJobs = jobs.map(job => {
+            if (job.applyUrl === jobUrl) {
+                // Toggle the marked state
+                return { ...job, marked: !job.marked };
+            }
+            return job;
+        });
+        
+        // Update storage and re-render
         localStorage.setItem('jobPostings', JSON.stringify(updatedJobs));
         this.renderJobs(updatedJobs);
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const tracker = new JobTracker();
+    new JobTracker();
 });
