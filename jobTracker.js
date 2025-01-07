@@ -18,19 +18,25 @@ class JobTracker {
                 console.error('Error loading initial jobs:', error);
             }
         } else {
-            // On refresh, only get unmarked jobs from storage
             const jobs = JSON.parse(storedJobs);
-            const unmarkedJobs = jobs.filter(job => !job.marked);
             
             try {
                 // Load new jobs and merge them
                 const response = await fetch('jobs.json');
                 const data = await response.json();
                 const newJobs = data.jobs.map(job => ({...job, marked: false}));
-                await this.mergeNewJobs(newJobs, unmarkedJobs);
+                
+                // Merge strategy: keep existing job states (marked/unmarked)
+                const mergedJobs = newJobs.map(newJob => {
+                    const existingJob = jobs.find(job => job.applyUrl === newJob.applyUrl);
+                    return existingJob ? {...existingJob} : newJob;
+                });
+
+                localStorage.setItem('jobPostings', JSON.stringify(mergedJobs));
+                this.renderJobs(mergedJobs);
             } catch (error) {
                 console.error('Error fetching new jobs:', error);
-                this.renderJobs(unmarkedJobs);
+                this.renderJobs(jobs);
             }
         }
     }
@@ -76,7 +82,7 @@ class JobTracker {
 
     createJobCard(job) {
         const card = document.createElement('div');
-        card.className = `job-card ${job.marked ? 'marked' : ''}`;
+        card.className = `job-card ${job.marked ? 'marked' : ''}`; 
         
         card.innerHTML = `
             <div class="card-content">
@@ -115,13 +121,16 @@ class JobTracker {
     }
 
     toggleJobMark(jobUrl) {
+        // Get the current jobs from localStorage
         const jobs = JSON.parse(localStorage.getItem('jobPostings'));
+        
+        // Map through jobs and toggle ONLY the job with the matching URL
         const updatedJobs = jobs.map(job => {
             if (job.applyUrl === jobUrl) {
-                // Toggle the marked state
+                // Toggle the marked state ONLY for this specific job
                 return { ...job, marked: !job.marked };
             }
-            return job;
+            return job; // Return other jobs unchanged
         });
         
         // Update storage and re-render
