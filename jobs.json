@@ -1,133 +1,133 @@
 {
   "jobs": [
     {
-      "title": "Tech Lead Frontend Visualization",
-      "company": "Foxglove",
-      "requirements": [
-        "TypeScript expertise",
-        "Visualization experience",
-        "Technical leadership"
-      ],
-      "salaryRange": "$140,000 - $180,000/year",
-      "jobType": "Remote (U.S. or Australia/NZ)",
-      "applyUrl": "https://foxglove.dev/careers",
-      "marked": false
-    },
-    {
-      "title": "Senior Web3 Frontend Engineer",
-      "company": "Magic",
+      "title": "Senior Frontend Engineer (Web3/DeFi)",
+      "company": "Balancer Labs",
       "requirements": [
         "React & TypeScript",
-        "Web3 experience",
-        "Frontend architecture"
+        "DeFi/Web3 experience",
+        "Ethereum & L2s knowledge"
       ],
-      "salaryRange": "$120,000 - $170,000/year",
-      "jobType": "Remote Global",
-      "applyUrl": "https://web3.career/front-end+remote-jobs",
+      "salaryRange": "$100,000 - $150,000/year",
+      "jobType": "Remote",
+      "applyUrl": "https://web3.career/senior-frontend-engineer-web3-defi-balancer-labs-1/35436",
       "marked": false
     },
     {
       "title": "Senior Frontend Engineer",
-      "company": "HackerRank",
+      "company": "Status",
       "requirements": [
-        "TypeScript",
-        "Frontend Engineer II level",
-        "Modern JavaScript"
-      ],
-      "salaryRange": "$50,000 - $75,000/year",
-      "jobType": "Remote",
-      "applyUrl": "https://remoteok.com/remote-frontend+typescript-jobs",
-      "marked": false
-    },
-    {
-      "title": "Frontend Architect",
-      "company": "Working Nomads",
-      "requirements": [
+        "JavaScript/TypeScript",
         "React expertise",
-        "Architecture design",
-        "Team leadership"
+        "Web3 technologies"
       ],
-      "salaryRange": "$130,000 - $180,000/year",
-      "jobType": "Remote Worldwide",
-      "applyUrl": "https://www.workingnomads.com/remote-react-jobs",
+      "salaryRange": "$120,000 - $160,000/year",
+      "jobType": "Remote Global",
+      "applyUrl": "https://web3.career/senior-frontend-developer-js-typescript-react-status/59058",
       "marked": false
     },
     {
-      "title": "Senior React Developer",
-      "company": "Turing",
+      "title": "Web3 Frontend Engineer",
+      "company": "OpenSea",
       "requirements": [
-        "React/Node.js",
-        "Full-stack capabilities",
-        "5+ years experience"
+        "React & TypeScript",
+        "NFT/Web3 experience",
+        "Product collaboration"
       ],
-      "salaryRange": "$60,000 - $140,000/year",
-      "jobType": "Remote US",
-      "applyUrl": "https://www.turing.com/jobs/remote-react-js-developer",
-      "marked": false
-    },
-    {
-      "title": "Frontend Engineer II",
-      "company": "Li.fi",
-      "requirements": [
-        "TypeScript",
-        "Modern frameworks",
-        "Performance optimization"
-      ],
-      "salaryRange": "$50,000 - $75,000/year",
+      "salaryRange": "$140,000 - $200,000/year",
       "jobType": "Remote",
-      "applyUrl": "https://remoteok.com/remote-frontend+typescript-jobs",
+      "applyUrl": "https://web3.career/frontend-engineer-opensea/921",
       "marked": false
     },
     {
       "title": "Senior Frontend Engineer",
-      "company": "Arc",
+      "company": "Rarible",
       "requirements": [
-        "TypeScript expertise",
-        "Frontend architecture",
-        "Team collaboration"
+        "React proficiency",
+        "Web3 integration",
+        "DApp development"
       ],
-      "salaryRange": "$100,000 - $160,000/year",
-      "jobType": "Remote Global",
-      "applyUrl": "https://arc.dev/remote-jobs/front-end",
-      "marked": false
-    },
-    {
-      "title": "React Developer",
-      "company": "We Work Remotely",
-      "requirements": [
-        "React.js",
-        "Frontend development",
-        "Modern JavaScript"
-      ],
-      "salaryRange": "$80,000 - $140,000/year",
+      "salaryRange": "$120,000 - $180,000/year",
       "jobType": "Remote",
-      "applyUrl": "https://weworkremotely.com/categories/remote-front-end-programming-jobs",
+      "applyUrl": "https://web3.career/senior-frontend-engineer-react-rarible/9164",
       "marked": false
     },
     {
-      "title": "Senior Web3 Software Engineer",
-      "company": "Gemini",
+      "title": "Senior Frontend Engineer",
+      "company": "Kraken Digital Asset Exchange",
       "requirements": [
-        "React & TypeScript",
-        "Web3 development",
-        "DeFi knowledge"
+        "React/TypeScript",
+        "Crypto experience",
+        "Financial UI/UX"
       ],
       "salaryRange": "$130,000 - $190,000/year",
       "jobType": "Remote",
-      "applyUrl": "https://web3.career/front-end+remote-jobs",
+      "applyUrl": "https://web3.career/senior-frontend-engineer-react-kraken/7632",
       "marked": false
     },
     {
       "title": "Frontend Engineer",
-      "company": "SimplyHired",
+      "company": "Fractal",
       "requirements": [
-        "React",
-        "TypeScript",
-        "Modern web development"
+        "React expertise",
+        "Web3 development",
+        "DApp architecture"
       ],
-      "salaryRange": "$90,000 - $140,000/year",
+      "salaryRange": "$140,000 - $180,000/year",
       "jobType": "Remote",
-      "applyUrl": "https://www.simplyhired.com/search?q=react+typescript&l=remote",
+      "applyUrl": "https://web3.career/frontend-engineer-react-fractal-is/24155",
+      "marked": false
+    },
+    {
+      "title": "Software Engineer - Frontend",
+      "company": "Flexlend",
+      "requirements": [
+        "React/TypeScript",
+        "DeFi experience",
+        "Smart contract integration"
+      ],
+      "salaryRange": "$126,000 - $150,000/year",
+      "jobType": "Remote",
+      "applyUrl": "https://web3.career/software-engineer-frontend-flexlend/58558",
+      "marked": false
+    },
+    {
+      "title": "Senior Frontend Engineer",
+      "company": "Glassnode",
+      "requirements": [
+        "React mastery",
+        "Data visualization",
+        "Crypto analytics"
+      ],
+      "salaryRange": "$140,000 - $200,000/year",
+      "jobType": "Remote",
+      "applyUrl": "https://web3.career/senior-frontend-engineer-react-m-f-d-glassnode/27135",
+      "marked": false
+    },
+    {
+      "title": "Senior Frontend SDK Engineer",
+      "company": "Socket",
+      "requirements": [
+        "TypeScript/JavaScript",
+        "SDK development",
+        "Web3 protocols"
+      ],
+      "salaryRange": "$130,000 - $180,000/year",
+      "jobType": "Remote",
+      "applyUrl": "https://web3.career/front-end-jobs",
+      "marked": false
+    },
+    {
+      "title": "Senior Frontend Engineer",
+      "company": "Titan",
+      "requirements": [
+        "React & TypeScript",
+        "Performance optimization",
+        "Scalable architecture"
+      ],
+      "salaryRange": "$140,000 - $190,000/year",
+      "jobType": "Remote",
+      "applyUrl": "https://web3.career/front-end-jobs",
       "marked": false
     }
   ]

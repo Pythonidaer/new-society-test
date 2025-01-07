@@ -10,9 +10,9 @@ class JobTracker {
             try {
                 const response = await fetch('jobs.json');
                 const data = await response.json();
-                const jobsWithMarkedStatus = data.jobs.map(job => ({...job, marked: false}));
-                localStorage.setItem('jobPostings', JSON.stringify(jobsWithMarkedStatus));
-                this.renderJobs(jobsWithMarkedStatus);
+                const initialJobs = data.jobs.map(job => ({...job, marked: false}));
+                localStorage.setItem('jobPostings', JSON.stringify(initialJobs));
+                this.renderJobs(initialJobs);
             } catch (error) {
                 console.error('Error loading initial jobs:', error);
             }
@@ -21,21 +21,35 @@ class JobTracker {
             const jobs = JSON.parse(storedJobs);
             const activeJobs = jobs.filter(job => !job.marked);
             localStorage.setItem('jobPostings', JSON.stringify(activeJobs));
-            this.renderJobs(activeJobs);
+            
+            // After cleaning up marked jobs, try to fetch and merge new jobs
+            try {
+                const response = await fetch('jobs.json');
+                const data = await response.json();
+                this.mergeNewJobs(data.jobs);
+            } catch (error) {
+                console.error('Error fetching new jobs:', error);
+                this.renderJobs(activeJobs);
+            }
         }
     }
 
-    async addNewJobs(newJobs) {
+    async mergeNewJobs(newJobs) {
         let storedJobs = JSON.parse(localStorage.getItem('jobPostings') || '[]');
         
-        const jobsToAdd = newJobs.filter(newJob => 
-            !storedJobs.some(job => job.applyUrl === newJob.applyUrl)
+        // Filter out any jobs that already exist in storage (checking by URL)
+        const uniqueNewJobs = newJobs.filter(newJob => 
+            !storedJobs.some(existingJob => existingJob.applyUrl === newJob.applyUrl)
         ).map(job => ({...job, marked: false}));
 
-        if (jobsToAdd.length > 0) {
-            const updatedJobs = [...storedJobs, ...jobsToAdd];
+        if (uniqueNewJobs.length > 0) {
+            const updatedJobs = [...storedJobs, ...uniqueNewJobs];
             localStorage.setItem('jobPostings', JSON.stringify(updatedJobs));
             this.renderJobs(updatedJobs);
+            console.log(`Added ${uniqueNewJobs.length} new jobs to storage`);
+        } else {
+            this.renderJobs(storedJobs);
+            console.log('No new unique jobs to add');
         }
     }
 
@@ -44,7 +58,7 @@ class JobTracker {
         const jobsSection = document.createElement('div');
         jobsSection.className = 'job-cards';
 
-        // Separate unmarked and marked jobs
+        // Sort jobs by marked status
         const unmarkedJobs = jobs.filter(job => !job.marked);
         const markedJobs = jobs.filter(job => job.marked);
 
@@ -54,7 +68,6 @@ class JobTracker {
             jobsSection.appendChild(card);
         });
 
-        // Add separator and marked jobs only during the current session
         if (markedJobs.length > 0) {
             const separator = document.createElement('div');
             separator.className = 'jobs-separator';
@@ -119,5 +132,5 @@ class JobTracker {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    new JobTracker();
+    const tracker = new JobTracker();
 });
