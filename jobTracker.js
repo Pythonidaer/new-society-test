@@ -17,8 +17,11 @@ class JobTracker {
                 console.error('Error loading initial jobs:', error);
             }
         } else {
+            // Clean up marked jobs from previous session
             const jobs = JSON.parse(storedJobs);
-            this.renderJobs(jobs);
+            const activeJobs = jobs.filter(job => !job.marked);
+            localStorage.setItem('jobPostings', JSON.stringify(activeJobs));
+            this.renderJobs(activeJobs);
         }
     }
 
@@ -51,14 +54,13 @@ class JobTracker {
             jobsSection.appendChild(card);
         });
 
-        // Add separator if there are marked jobs
+        // Add separator and marked jobs only during the current session
         if (markedJobs.length > 0) {
             const separator = document.createElement('div');
             separator.className = 'jobs-separator';
-            separator.textContent = 'Marked Jobs';
+            separator.textContent = 'Recently Marked Jobs - Will be removed on refresh';
             jobsSection.appendChild(separator);
 
-            // Render marked jobs
             markedJobs.forEach(job => {
                 const card = this.createJobCard(job);
                 jobsSection.appendChild(card);
@@ -111,7 +113,6 @@ class JobTracker {
             return job;
         });
         
-        // Update localStorage but don't remove marked jobs yet
         localStorage.setItem('jobPostings', JSON.stringify(updatedJobs));
         this.renderJobs(updatedJobs);
     }
