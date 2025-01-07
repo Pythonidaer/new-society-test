@@ -25,17 +25,21 @@ class JobTracker {
         } else {
             let jobs = JSON.parse(storedJobs);
 
-            // Remove jobs marked in previous session
+            // Remove marked jobs and update localStorage
             jobs = jobs.filter(job => !job.marked);
+            localStorage.setItem('jobPostings', JSON.stringify(jobs));
 
             try {
                 // Load new jobs from JSON if needed
                 const response = await fetch('jobs.json');
                 const data = await response.json();
+                
+                // Generate unique IDs, using existing ID if present
+                const existingIds = jobs.map(job => job.id);
                 const newJobs = data.jobs.map(job => ({
                     ...job, 
                     marked: false,
-                    id: this.generateUniqueId()
+                    id: job.id || this.generateUniqueId(existingIds)
                 }));
 
                 // Merge new jobs, avoiding duplicates
@@ -50,14 +54,17 @@ class JobTracker {
                 this.renderJobs(mergedJobs);
             } catch (error) {
                 console.error('Error fetching new jobs:', error);
-                localStorage.setItem('jobPostings', JSON.stringify(jobs));
                 this.renderJobs(jobs);
             }
         }
     }
 
-    generateUniqueId() {
-        return '_' + Math.random().toString(36).substr(2, 9);
+    generateUniqueId(existingIds = []) {
+        let newId;
+        do {
+            newId = '_' + Math.random().toString(36).substr(2, 9);
+        } while (existingIds.includes(newId));
+        return newId;
     }
 
     renderJobs(jobs) {
@@ -99,7 +106,7 @@ class JobTracker {
 
     createJobCard(job) {
         const card = document.createElement('div');
-        card.className = `job-card ${job.marked ? 'marked' : ''}`;
+        card.className = `job-card ${job.marked ? 'marked' : ''}`; 
         card.dataset.id = job.id;
         
         card.innerHTML = `
@@ -120,8 +127,8 @@ class JobTracker {
             </div>
             <div class="card-actions">
                 <a href="${job.applyUrl}" class="job-link" target="_blank" rel="noopener noreferrer">Apply Now</a>
-                <button class="mark-button ${job.marked ? 'marked' : ''}" 
-                        data-url="${job.applyUrl}" 
+                <button class="mark-button ${job.marked ? 'marked' : ''}"
+                        data-id="${job.id}" 
                         title="${job.marked ? 'Unmark Job' : 'Mark for Deletion'}"
                         aria-label="${job.marked ? 'Unmark Job' : 'Mark for Deletion'}">
                     <span class="button-light" aria-hidden="true"></span>
