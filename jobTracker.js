@@ -1,9 +1,12 @@
 class JobTracker {
+    // tracked-jobs section, but not another section for 
+    // within this is active-jobs div
+    // however marked-jobs div is only created when clicked -- why?
     constructor() {
         this.jobsContainer = document.getElementById('tracked-jobs');
         this.initialize();
     }
-
+    // Call this function
     async initialize() {
         let storedJobs = localStorage.getItem('jobPostings');
         
@@ -14,7 +17,7 @@ class JobTracker {
                 const data = await response.json();
                 const initialJobs = data.jobs.map(job => ({
                     ...job, 
-                    marked: false,
+                    marked: false, // Default all jobs to not marked
                     id: this.generateUniqueId()
                 }));
                 localStorage.setItem('jobPostings', JSON.stringify(initialJobs));
@@ -24,55 +27,44 @@ class JobTracker {
             }
         } else {
             let jobs = JSON.parse(storedJobs);
-
-            // Remove jobs that were marked in the previous session
-            const unmarkedJobs = jobs.filter(job => !job.marked);
-
+    
             try {
-                // Load new jobs from JSON
+                // Fetch new jobs from JSON
                 const response = await fetch('jobs.json');
                 const data = await response.json();
                 
                 // Merge existing jobs while avoiding duplicates
                 const mergedJobs = data.jobs.map(newJob => {
-                    // Find an existing job with the same apply URL
-                    const existingJob = unmarkedJobs.find(job => job.applyUrl === newJob.applyUrl);
+                    const existingJob = jobs.find(job => job.applyUrl === newJob.applyUrl);
                     
-                    // If an existing job is found, use its details
+                    // If the job exists, keep its current state (including marked)
                     if (existingJob) {
-                        return {
-                            ...newJob,
-                            marked: false,
-                            id: existingJob.id
-                        };
+                        return { ...existingJob };
                     }
                     
-                    // If no existing job, create a new one
+                    // If no existing job, add it as new with default marked: false
                     return {
                         ...newJob,
                         marked: false,
                         id: this.generateUniqueId()
                     };
                 });
-
-                // Update localStorage with merged jobs (excluding previously marked jobs)
+    
+                // Save all jobs (marked and unmarked) to localStorage
                 localStorage.setItem('jobPostings', JSON.stringify(mergedJobs));
-                
-                // Render jobs, excluding marked jobs
                 this.renderJobs(mergedJobs);
             } catch (error) {
                 console.error('Error fetching new jobs:', error);
-                // If there's an error, render unmarked jobs
-                this.renderJobs(unmarkedJobs);
-                localStorage.setItem('jobPostings', JSON.stringify(unmarkedJobs));
+                this.renderJobs(jobs);
             }
         }
     }
+    
 
     generateUniqueId(existingIds = []) {
         let newId;
         do {
-            newId = '_' + Math.random().toString(36).substr(2, 9);
+            newId = '_' + Math.random().toString(36).substring(2, 9);
         } while (existingIds.includes(newId));
         return newId;
     }
