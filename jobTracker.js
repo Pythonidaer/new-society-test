@@ -1,65 +1,48 @@
 class JobTracker {
-    // tracked-jobs section, but not another section for 
-    // within this is active-jobs div
-    // however marked-jobs div is only created when clicked -- why?
     constructor() {
         this.jobsContainer = document.getElementById('tracked-jobs');
+        this.sessionMarkedJobs = new Set(); // Track jobs marked during the session
+        this.blacklistedDomains = ["remoteok.com"]; // Define blacklisted domains
         this.initialize();
     }
-    // Call this function
+
+    // Check if a URL matches a blacklisted domain
+    isBlacklisted(url) {
+        try {
+            const domain = new URL(url).hostname; // Extract the hostname from the URL
+            return this.blacklistedDomains.some(blacklistedDomain => domain.includes(blacklistedDomain));
+        } catch (error) {
+            console.error(`Invalid URL encountered: ${url}`);
+            return false; // Treat invalid URLs as not blacklisted
+        }
+    }
+
     async initialize() {
         let storedJobs = localStorage.getItem('jobPostings');
-        
+
         if (!storedJobs) {
-            // First-time load from JSON
             try {
                 const response = await fetch('jobs.json');
                 const data = await response.json();
-                const initialJobs = data.jobs.map(job => ({
-                    ...job, 
-                    marked: false, // Default all jobs to not marked
-                    id: this.generateUniqueId()
-                }));
+
+                const initialJobs = data.jobs
+                    .filter(job => !this.isBlacklisted(job.applyUrl)) // Exclude blacklisted jobs
+                    .map(job => ({
+                        ...job,
+                        marked: false, // Default all jobs to unmarked
+                        id: this.generateUniqueId(),
+                    }));
+
                 localStorage.setItem('jobPostings', JSON.stringify(initialJobs));
-                this.renderJobs(initialJobs);
+                this.renderJobs(initialJobs.filter(job => !job.marked)); // Render only unmarked jobs
             } catch (error) {
                 console.error('Error loading initial jobs:', error);
             }
         } else {
-            let jobs = JSON.parse(storedJobs);
-    
-            try {
-                // Fetch new jobs from JSON
-                const response = await fetch('jobs.json');
-                const data = await response.json();
-                
-                // Merge existing jobs while avoiding duplicates
-                const mergedJobs = data.jobs.map(newJob => {
-                    const existingJob = jobs.find(job => job.applyUrl === newJob.applyUrl);
-                    
-                    // If the job exists, keep its current state (including marked)
-                    if (existingJob) {
-                        return { ...existingJob };
-                    }
-                    
-                    // If no existing job, add it as new with default marked: false
-                    return {
-                        ...newJob,
-                        marked: false,
-                        id: this.generateUniqueId()
-                    };
-                });
-    
-                // Save all jobs (marked and unmarked) to localStorage
-                localStorage.setItem('jobPostings', JSON.stringify(mergedJobs));
-                this.renderJobs(mergedJobs);
-            } catch (error) {
-                console.error('Error fetching new jobs:', error);
-                this.renderJobs(jobs);
-            }
+            const jobs = JSON.parse(storedJobs);
+            this.renderJobs(jobs.filter(job => !job.marked)); // Render only unmarked jobs
         }
     }
-    
 
     generateUniqueId(existingIds = []) {
         let newId;
@@ -69,14 +52,14 @@ class JobTracker {
         return newId;
     }
 
-    renderJobs(jobs) {
+    renderJobs(jobs, allJobs = jobs) {
         this.jobsContainer.innerHTML = '';
         const jobsSection = document.createElement('div');
         jobsSection.className = 'job-cards';
 
-        // Separate marked and unmarked jobs
-        const activeJobs = jobs.filter(job => !job.marked);
-        const markedJobs = jobs.filter(job => job.marked);
+        // Separate active and marked jobs
+        const activeJobs = jobs.filter(job => !job.marked); // Jobs not marked
+        const sessionMarkedJobs = allJobs.filter(job => this.sessionMarkedJobs.has(job.id)); // Session-marked jobs only
 
         // Render active jobs
         const activeJobsContainer = document.createElement('div');
@@ -86,8 +69,8 @@ class JobTracker {
         });
         jobsSection.appendChild(activeJobsContainer);
 
-        // Render marked jobs if any
-        if (markedJobs.length > 0) {
+        // Render session-marked jobs (marked during this session)
+        if (sessionMarkedJobs.length > 0) {
             const markedJobsContainer = document.createElement('div');
             markedJobsContainer.className = 'marked-jobs';
 
@@ -96,8 +79,10 @@ class JobTracker {
             separator.textContent = 'Marked for Deletion';
             markedJobsContainer.appendChild(separator);
 
-            markedJobs.forEach(job => {
-                markedJobsContainer.appendChild(this.createJobCard(job));
+            sessionMarkedJobs.forEach(job => {
+                const jobCard = this.createJobCard(job);
+                jobCard.classList.add('marked-temp'); // Apply temporary class
+                markedJobsContainer.appendChild(jobCard);
             });
 
             jobsSection.appendChild(markedJobsContainer);
@@ -108,9 +93,9 @@ class JobTracker {
 
     createJobCard(job) {
         const card = document.createElement('div');
-        card.className = `job-card ${job.marked ? 'marked' : ''}`; 
+        card.className = `job-card ${job.marked ? 'marked' : ''}`;
         card.dataset.id = job.id;
-        
+
         card.innerHTML = `
             <div class="card-content">
                 <div class="card-header">
@@ -148,21 +133,30 @@ class JobTracker {
     }
 
     toggleJobMark(jobId) {
-        // Get the current jobs from localStorage
         const jobs = JSON.parse(localStorage.getItem('jobPostings'));
-        
-        // Map through jobs and toggle ONLY the job with the matching ID
+
+        // Toggle the marked state for the specific job
         const updatedJobs = jobs.map(job => {
             if (job.id === jobId) {
-                // Toggle the marked state ONLY for this specific job
-                return { ...job, marked: !job.marked };
+                const isMarkedNow = !job.marked;
+
+                // Update the session tracking set
+                if (isMarkedNow) {
+                    this.sessionMarkedJobs.add(jobId); // Add to session-marked jobs
+                } else {
+                    this.sessionMarkedJobs.delete(jobId); // Remove from session-marked jobs
+                }
+
+                return { ...job, marked: isMarkedNow };
             }
             return job;
         });
-        
-        // Update storage and re-render
+
+        // Save back to localStorage
         localStorage.setItem('jobPostings', JSON.stringify(updatedJobs));
-        this.renderJobs(updatedJobs);
+
+        // Re-render jobs with updated session state
+        this.renderJobs(updatedJobs.filter(job => !job.marked), updatedJobs);
     }
 }
 
