@@ -1,1 +1,277 @@
-ewogICJqb2JzIjogWwogICAgewogICAgICAidGl0bGUiOiAiRnJvbnRlbmQgRGV2ZWxvcGVyIiwKICAgICAgImNvbXBhbnkiOiAiRHJhZnRLaW5ncyIsCiAgICAgICJyZXF1aXJlbWVudHMiOiBbCiAgICAgICAgIlJlYWN0IiwKICAgICAgICAiSmF2YVNjcmlwdC9UeXBlU2NyaXB0IiwKICAgICAgICAiU3BvcnRzIERhdGEgSW50ZWdyYXRpb24iCiAgICAgIF0sCiAgICAgICJzYWxhcnlSYW5nZSI6ICIkOTUsMDAwIC0gJDExNSwwMDAveWVhciIsCiAgICAgICJqb2JUeXBlIjogIlJlbW90ZSBVUyIsCiAgICAgICJhcHBseVVybCI6ICJodHRwczovL2NhcmVlcnMuZHJhZnRraW5ncy5jb20iLAogICAgICAibWFya2VkIjogZmFsc2UKICAgIH0KICBdCn0=
+{
+  "jobs": [
+    {
+      "title": "Frontend Developer",
+      "company": "DraftKings",
+      "requirements": [
+        "React",
+        "JavaScript/TypeScript",
+        "Sports Data Integration"
+      ],
+      "salaryRange": "$95,000 - $115,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://careers.draftkings.com",
+      "marked": false
+    },
+    {
+      "title": "Frontend Developer",
+      "company": "Asana",
+      "requirements": [
+        "React",
+        "JavaScript/TypeScript",
+        "Component Libraries"
+      ],
+      "salaryRange": "$100,000 - $120,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://asana.com/jobs",
+      "marked": false
+    },
+    {
+      "title": "Frontend Developer",
+      "company": "Buffer",
+      "requirements": [
+        "React",
+        "Redux",
+        "Responsive Design"
+      ],
+      "salaryRange": "$100,000 - $120,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://buffer.com/journey",
+      "marked": false
+    },
+    {
+      "title": "Frontend Developer",
+      "company": "Webflow",
+      "requirements": [
+        "React",
+        "JavaScript",
+        "CSS/SCSS"
+      ],
+      "salaryRange": "$100,000 - $120,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://webflow.com/careers",
+      "marked": false
+    },
+    {
+      "title": "Frontend Developer",
+      "company": "Notion",
+      "requirements": [
+        "React",
+        "TypeScript",
+        "Web Performance"
+      ],
+      "salaryRange": "$100,000 - $120,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://www.notion.so/careers",
+      "marked": false
+    },
+    {
+      "title": "Frontend Developer",
+      "company": "Stripe",
+      "requirements": [
+        "React",
+        "JavaScript",
+        "Payment UIs"
+      ],
+      "salaryRange": "$100,000 - $120,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://stripe.com/jobs",
+      "marked": false
+    },
+    {
+      "title": "Frontend Developer",
+      "company": "GitHub",
+      "requirements": [
+        "React",
+        "TypeScript",
+        "Git Workflows"
+      ],
+      "salaryRange": "$100,000 - $120,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://github.com/about/careers",
+      "marked": false
+    },
+    {
+      "title": "Frontend Developer",
+      "company": "Atlassian",
+      "requirements": [
+        "React",
+        "JavaScript",
+        "Agile Development"
+      ],
+      "salaryRange": "$100,000 - $120,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://www.atlassian.com/company/careers",
+      "marked": false
+    },
+    {
+      "title": "Frontend Developer",
+      "company": "Spotify",
+      "requirements": [
+        "React",
+        "TypeScript",
+        "Audio APIs"
+      ],
+      "salaryRange": "$100,000 - $120,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://www.spotifyjobs.com",
+      "marked": false
+    },
+    {
+      "title": "Frontend Developer",
+      "company": "MongoDB",
+      "requirements": [
+        "React",
+        "TypeScript",
+        "Data Visualization"
+      ],
+      "salaryRange": "$100,000 - $120,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://www.mongodb.com/careers",
+      "marked": false
+    },
+    {
+      "title": "Frontend Developer",
+      "company": "Dropbox",
+      "requirements": [
+        "React",
+        "JavaScript",
+        "File Systems"
+      ],
+      "salaryRange": "$100,000 - $120,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://www.dropbox.com/jobs",
+      "marked": false
+    },
+    {
+      "title": "Frontend Developer",
+      "company": "GitLab",
+      "requirements": [
+        "React",
+        "Vue.js",
+        "CI/CD Tools"
+      ],
+      "salaryRange": "$100,000 - $120,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://about.gitlab.com/jobs",
+      "marked": false
+    },
+    {
+      "title": "Frontend Developer",
+      "company": "Twilio",
+      "requirements": [
+        "React",
+        "TypeScript",
+        "API Integration"
+      ],
+      "salaryRange": "$100,000 - $120,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://www.twilio.com/company/jobs",
+      "marked": false
+    },
+    {
+      "title": "Frontend Developer",
+      "company": "Auth0",
+      "requirements": [
+        "React",
+        "JavaScript",
+        "OAuth/OIDC"
+      ],
+      "salaryRange": "$100,000 - $120,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://auth0.com/careers",
+      "marked": false
+    },
+    {
+      "title": "Frontend Developer",
+      "company": "Digital Ocean",
+      "requirements": [
+        "React",
+        "TypeScript",
+        "Cloud Platforms"
+      ],
+      "salaryRange": "$100,000 - $120,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://www.digitalocean.com/careers",
+      "marked": false
+    },
+    {
+      "title": "Frontend Developer",
+      "company": "Shopify",
+      "requirements": [
+        "React",
+        "TypeScript",
+        "E-commerce"
+      ],
+      "salaryRange": "$100,000 - $120,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://www.shopify.com/careers",
+      "marked": false
+    },
+    {
+      "title": "Frontend Developer",
+      "company": "Discord",
+      "requirements": [
+        "React",
+        "TypeScript",
+        "WebRTC"
+      ],
+      "salaryRange": "$100,000 - $120,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://discord.com/jobs",
+      "marked": false
+    },
+    {
+      "title": "Frontend Developer",
+      "company": "Slack",
+      "requirements": [
+        "React",
+        "JavaScript",
+        "Real-time Updates"
+      ],
+      "salaryRange": "$100,000 - $120,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://slack.com/careers",
+      "marked": false
+    },
+    {
+      "title": "Frontend Developer",
+      "company": "HashiCorp",
+      "requirements": [
+        "React",
+        "TypeScript",
+        "Infrastructure UIs"
+      ],
+      "salaryRange": "$100,000 - $120,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://www.hashicorp.com/jobs",
+      "marked": false
+    },
+    {
+      "title": "Frontend Developer",
+      "company": "Datadog",
+      "requirements": [
+        "React",
+        "TypeScript",
+        "Metrics Visualization"
+      ],
+      "salaryRange": "$100,000 - $120,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://www.datadoghq.com/careers",
+      "marked": false
+    },
+    {
+      "title": "Frontend Developer",
+      "company": "Figma",
+      "requirements": [
+        "React",
+        "TypeScript",
+        "Canvas APIs"
+      ],
+      "salaryRange": "$100,000 - $120,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://www.figma.com/careers",
+      "marked": false
+    }
+  ]
+}
