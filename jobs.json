@@ -49,7 +49,7 @@
       ],
       "salaryRange": "$120,000 - $160,000/year",
       "jobType": "Remote",
-      "applyUrl": "https://remoteok.com/remote-react+typescript-jobs",
+      "applyUrl": "https://glossgenius.com/careers",
       "marked": false
     },
     {
@@ -62,7 +62,7 @@
       ],
       "salaryRange": "$110,000 - $150,000/year",
       "jobType": "Remote Europe",
-      "applyUrl": "https://cy.linkedin.com/jobs/view/senior-frontend-developer-react-typescript-at-finom-3836472735",
+      "applyUrl": "https://finom.co/careers",
       "marked": false
     },
     {
@@ -75,7 +75,7 @@
       ],
       "salaryRange": "$140,000 - $190,000/year",
       "jobType": "Remote US/Canada",
-      "applyUrl": "https://remoteok.com/remote-react+typescript-jobs",
+      "applyUrl": "https://stackadapt.com/careers",
       "marked": false
     },
     {
@@ -88,7 +88,7 @@
       ],
       "salaryRange": "$145,000 - $185,000/year",
       "jobType": "Remote US",
-      "applyUrl": "https://www.turing.com/jobs/remote-front-end-developer-jobs",
+      "applyUrl": "https://jobs.disney.com",
       "marked": false
     },
     {
@@ -101,7 +101,7 @@
       ],
       "salaryRange": "$120,000 - $160,000/year",
       "jobType": "Remote",
-      "applyUrl": "https://remoteok.com/remote-front-end+senior-jobs",
+      "applyUrl": "https://cordial.com/careers",
       "marked": false
     },
     {
@@ -114,7 +114,7 @@
       ],
       "salaryRange": "$130,000 - $170,000/year",
       "jobType": "Remote Global",
-      "applyUrl": "https://remoteok.com/remote-dev+react-jobs",
+      "applyUrl": "https://3motionai.com/careers",
       "marked": false
     },
     {
@@ -127,7 +127,267 @@
       ],
       "salaryRange": "$100,000 - $130,000/year",
       "jobType": "Remote",
-      "applyUrl": "https://remoteok.com/remote-dev+react-jobs",
+      "applyUrl": "https://stickermule.com/careers",
+      "marked": false
+    },
+    {
+      "title": "Lead Frontend Engineer",
+      "company": "Stripe",
+      "requirements": [
+        "React & TypeScript",
+        "Payment Systems Integration",
+        "Micro-frontend Architecture"
+      ],
+      "salaryRange": "$160,000 - $220,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://stripe.com/jobs",
+      "marked": false
+    },
+    {
+      "title": "Principal Frontend Developer",
+      "company": "Atlassian",
+      "requirements": [
+        "React & TypeScript",
+        "Cloud Platform Experience",
+        "Design Systems"
+      ],
+      "salaryRange": "$180,000 - $240,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://www.atlassian.com/company/careers",
+      "marked": false
+    },
+    {
+      "title": "Senior Frontend Engineer",
+      "company": "MongoDB",
+      "requirements": [
+        "React & TypeScript",
+        "Database UIs",
+        "Performance Optimization"
+      ],
+      "salaryRange": "$150,000 - $200,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://www.mongodb.com/careers",
+      "marked": false
+    },
+    {
+      "title": "Staff Frontend Engineer",
+      "company": "GitLab",
+      "requirements": [
+        "React/Vue/TypeScript",
+        "Git-based Workflows",
+        "Open Source Experience"
+      ],
+      "salaryRange": "$170,000 - $230,000/year",
+      "jobType": "Remote Global",
+      "applyUrl": "https://about.gitlab.com/jobs",
+      "marked": false
+    },
+    {
+      "title": "Lead Frontend Developer",
+      "company": "Adobe",
+      "requirements": [
+        "React & TypeScript",
+        "Creative Cloud Apps",
+        "WebGL/Canvas"
+      ],
+      "salaryRange": "$165,000 - $225,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://www.adobe.com/careers.html",
+      "marked": false
+    },
+    {
+      "title": "Senior Frontend Engineer",
+      "company": "Shopify",
+      "requirements": [
+        "React & TypeScript",
+        "E-commerce Platforms",
+        "Ruby on Rails"
+      ],
+      "salaryRange": "$140,000 - $190,000/year",
+      "jobType": "Remote Global",
+      "applyUrl": "https://www.shopify.com/careers",
+      "marked": false
+    },
+    {
+      "title": "Principal Frontend Developer",
+      "company": "HubSpot",
+      "requirements": [
+        "React & TypeScript",
+        "CRM Systems",
+        "A/B Testing"
+      ],
+      "salaryRange": "$160,000 - $210,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://www.hubspot.com/careers",
+      "marked": false
+    },
+    {
+      "title": "Senior Frontend Engineer",
+      "company": "Square",
+      "requirements": [
+        "React & TypeScript",
+        "Payment UIs",
+        "Mobile Web"
+      ],
+      "salaryRange": "$155,000 - $205,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://careers.block.xyz",
+      "marked": false
+    },
+    {
+      "title": "Lead Frontend Developer",
+      "company": "Twilio",
+      "requirements": [
+        "React & TypeScript",
+        "Communications APIs",
+        "Real-time Applications"
+      ],
+      "salaryRange": "$150,000 - $200,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://www.twilio.com/company/jobs",
+      "marked": false
+    },
+    {
+      "title": "Staff Frontend Engineer",
+      "company": "Datadog",
+      "requirements": [
+        "React & TypeScript",
+        "Data Visualization",
+        "Performance Monitoring"
+      ],
+      "salaryRange": "$170,000 - $220,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://www.datadoghq.com/careers",
+      "marked": false
+    },
+    {
+      "title": "Senior Frontend Engineer",
+      "company": "Auth0",
+      "requirements": [
+        "React & TypeScript",
+        "Authentication Systems",
+        "Security Best Practices"
+      ],
+      "salaryRange": "$145,000 - $195,000/year",
+      "jobType": "Remote Global",
+      "applyUrl": "https://auth0.com/careers",
+      "marked": false
+    },
+    {
+      "title": "Principal Frontend Developer",
+      "company": "HashiCorp",
+      "requirements": [
+        "React & TypeScript",
+        "Infrastructure UIs",
+        "Enterprise Systems"
+      ],
+      "salaryRange": "$175,000 - $235,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://www.hashicorp.com/jobs",
+      "marked": false
+    },
+    {
+      "title": "Lead Frontend Engineer",
+      "company": "Cloudflare",
+      "requirements": [
+        "React & TypeScript",
+        "CDN Systems",
+        "Web Performance"
+      ],
+      "salaryRange": "$160,000 - $215,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://www.cloudflare.com/careers",
+      "marked": false
+    },
+    {
+      "title": "Senior Frontend Developer",
+      "company": "Digital Ocean",
+      "requirements": [
+        "React & TypeScript",
+        "Cloud Platforms",
+        "Developer Tools"
+      ],
+      "salaryRange": "$140,000 - $185,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://www.digitalocean.com/careers",
+      "marked": false
+    },
+    {
+      "title": "Staff Frontend Engineer",
+      "company": "Elastic",
+      "requirements": [
+        "React & TypeScript",
+        "Search UIs",
+        "Data Visualization"
+      ],
+      "salaryRange": "$155,000 - $210,000/year",
+      "jobType": "Remote Global",
+      "applyUrl": "https://www.elastic.co/about/careers",
+      "marked": false
+    },
+    {
+      "title": "Senior Frontend Engineer",
+      "company": "Confluent",
+      "requirements": [
+        "React & TypeScript",
+        "Streaming Data UIs",
+        "Real-time Dashboards"
+      ],
+      "salaryRange": "$150,000 - $200,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://www.confluent.io/careers",
+      "marked": false
+    },
+    {
+      "title": "Lead Frontend Developer",
+      "company": "New Relic",
+      "requirements": [
+        "React & TypeScript",
+        "Monitoring Tools",
+        "Data Visualization"
+      ],
+      "salaryRange": "$155,000 - $205,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://newrelic.com/about/careers",
+      "marked": false
+    },
+    {
+      "title": "Principal Frontend Engineer",
+      "company": "Fastly",
+      "requirements": [
+        "React & TypeScript",
+        "Edge Computing",
+        "Network Visualization"
+      ],
+      "salaryRange": "$165,000 - $225,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://www.fastly.com/about/careers",
+      "marked": false
+    },
+    {
+      "title": "Senior Frontend Developer",
+      "company": "CircleCI",
+      "requirements": [
+        "React & TypeScript",
+        "CI/CD Systems",
+        "Developer Tools"
+      ],
+      "salaryRange": "$145,000 - $195,000/year",
+      "jobType": "Remote Global",
+      "applyUrl": "https://circleci.com/careers",
+      "marked": false
+    },
+    {
+      "title": "Staff Frontend Engineer",
+      "company": "Sentry",
+      "requirements": [
+        "React & TypeScript",
+        "Error Monitoring",
+        "Performance Tools"
+      ],
+      "salaryRange": "$160,000 - $215,000/year",
+      "jobType": "Remote US",
+      "applyUrl": "https://sentry.io/careers",
       "marked": false
     }
   ]
